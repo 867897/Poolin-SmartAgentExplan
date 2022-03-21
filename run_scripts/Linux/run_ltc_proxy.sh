@@ -8,20 +8,37 @@ docker_name=
 
 #--------------further founction settings------------
 #均为可填选项
+#The following are optional options
 
 #连接上一级服务的模式 (代理默认AUTO)
+#Mode of connect to the service (default AUTO)
+  # - AUTO     : Select the best server according to network automatically
+  # - SEQUENCE : Dynamically select the server in ip list according to the priority by order
+  # - CONFUSE  : Randomly select a server in ip list and each connection time does not exceed 60 minutes
 up_server_mode=
+
 #`list` 指定当前代理的上级服务地址，可用","分隔多个
-up_server_address=
+# List of pool services, which can be separated by ","
+up_server_address=''
+
 #钉钉/Slack notify token设置
+# Communication software token settings, which will be used for some warning notifications
 notify_token=""
+
 #notify当前代理标签
+# Tag or label of this proxy-agent when warning notifications
 host=""
+
 #设置矿机统一子账号(默认为空,矿机设置生效,非空则以代理设置为准)
+# Set the sub-account of miners(When not empty will override the miner's settings)
 user_name=""
+
 #健康检查检测失败时间设置
+# Settings of Maximum Delay Tolerance Time of Network (minute)
 health_check_fail_duration=
-#share 拒绝数计量
+
+#share 拒绝数计量 (ETH A10/A11)
+# Numbers of share can be rejected （For ETH A10/A11 ONLY)
 reject_share_count=
 #----------------------------------------------------
 
